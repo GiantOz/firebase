@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+  <style>
+    #Train-table th,
+    td {
+      display: inline-block;
+      width: 24.575%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Train Tracker -->
+  <div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: blue; color: white">
+      <h1 class="text-center">Train Schedules</h1>
+      <h3 class="text-center">Train Times</h3>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <!-- Current Trains-->
+        <div class="card md-3">
+          <div class="card-header">Current Trains</div>
+          <div class="card-body">
+            <table class="table table-md table-hover" id='Train-table'>
+              <thead>
+                <tr>
+                  <th scope="col-sm-4">Train Name</th>
+                  <th scope="col-sm-4">Destination</th>
+                  <th scope="col-sm-4">Start Time</th>
+                  <th scope="col-sm-4">Next Arrival</th>                  
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Add Train  -->
+        <div class="card md-3">
+          <div class="card-header">Add Train</div>
+          <div class="card-body">
+
+            <!-- Entry Form -->
+            <form>
+              <div class="form-group">
+                <label for="train-name-input">Train Name</label>
+                <input class="form-control" id="train-name-input" placeholder="A-Train" type="text">
+              </div>
+              <div class="form-group">
+                <label for="destination-input">Destination</label>
+                <input class="form-control" id="destination-input" placeholder=Downtown type="text">
+              </div>
+              <div class="form-group">
+                <label for="start-input">First Train Time (minutes)</label>
+                <input class="form-control" id="start-input" placeholder="0000" type="minutes">
+              </div>
+              <div class="form-group">
+                <label for="arrival-input">Frequency</label>
+                <input class="form-control" id="arrival-input" placeholder="0000" type="number">
+              </div>
+              <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="trainschedule.js"></script>
+
+</body>
+
+</html>
