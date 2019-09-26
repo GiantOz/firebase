@@ -1,2 +1,2 @@
 # firebase
-In the Train Scheduler homework I am able to console.log my data and save it to the firebase database. I stil need to work on making it display on the page and I also need to continue to work on formatting the time.
+In the Train Scheduler homework I now see where I made my mistakes, my firebase was spot on but my html files needed lots of work. 
